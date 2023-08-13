@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<script type="text/javascript" src="js/jquery.js"></script> 
+	<script type="text/javascript"> 
+
+		$(document).ready(inicio)
+		
+		function inicio()
+		{	
+			$('select').change(cambiacss);
+			 
+		}
+
+		function cambiacss()
+		{
+			var plantilla=$('select').val(); 
+			
+			$('plantilla').html('<link rel=Stylesheet href="css/'+plantilla+'.css" type="text/css">');
+			
+		}
+	  
+
+	</script>
+	
+	<!-- (6) --->
+	<link rel=Stylesheet href="css/base.css" type="text/css">
+
+
+	<plantilla>
+
+		<link rel=Stylesheet href="css/movil.css" type="text/css">
+
+	</plantilla> 
+							
+
+</head>
+
+<body>
+	<select name="plantilla"> 
+		<option value="base">Selecciona una plantilla</option>
+		<option value="pc1">Plantilla para PC</option>
+		<option value="pchd">Plantilla alta definicion</option>
+		<option value="movil">Plantilla para teléfono móvil</option>
+		<option value="tablet">Plantilla para tablet digital</option>
+	</select>
+
+	<hr>
+
+	<div id="contenedor">
+
+		<header> <!-- (2) --->
+
+			<div id="titulo">
+				
+				<div id="logo">
+				</div>
+				
+				<h1>Mauricio Ruben Banega</h1>
+				<h2>Eslogan de la web</h2>
+			</div>	
+
+			<div style="clear:both;"></div>
+
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">Inicio</a>
+					</li>
+
+					<li>
+						<a href="blog.html">Blog</a>
+					</li>
+
+					<li>
+						<a href="productos.html">Productos</a>
+					</li>
+
+					<li>
+						<a href="contacto.html">Contacto</a>
+					</li>
+
+				</ul>
+			</nav>
+
+			<div style="clear:both;"></div>
+
+		</header>
+
+
+		<section>
+
+		<div id="contieneformulario"> <!-- Creamos este nuevo div para darle formato --->
+
+
+			<h3>Formulario de contacto</h3>
+			<p>Si desea contactarse conmigo, rellene este formulario:</p>
+				
+			<form method="POST" action="procesaformulario.php">
+
+				<div class="formleyenda">Nombre:<div>
+					<input type="text" name="nombre" id="nombre">
+
+				<div class="formleyenda">Correo electrónico:<div>
+					<input type="text" name="email" id="email">
+
+				<div class="formleyenda">Mensaje:<div>
+					<textarea name="mensaje"></textarea>
+
+					<input type="submit" value="Enviar" id="botonenviar">
+
+			</form>
+
+		</div>
+			
+		</section>
+
+		<div style="clear:both;"></div>
+
+		<footer>
+			<h6>(c) 2022 Mauricio Ruben Banega</h6>
+		</footer>
+
+
+	</div>
+
+</body>
+
+
+
+
+
+
+</html>

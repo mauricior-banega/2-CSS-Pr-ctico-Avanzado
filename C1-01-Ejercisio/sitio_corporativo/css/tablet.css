@@ -1,0 +1,153 @@
+/* Adaptaremos la apgina a como se vera una tablet, orientado toda la pagina para la derecha.*/
+
+@import url(http: //fonts.googleapis.com/css?family=Merienda);
+
+body, html
+{ 
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+
+	/* Para eliminar el scroll vertical del diseño de navegador que viene por defecto haremos lo siguiente */
+
+	overflow: hidden;
+
+}
+
+#titulo
+{
+	width: 600px;
+	heigth: 100px;
+}
+
+#logo
+{
+	height: 100px;
+	width: 100px;
+	background: url('../img/mauriciobanega2.png'); /*OJO:  Si lo pones como en el video, no va mostrar porque no le pone comillas simples dentro. Y el archivo es tipo JPG, y no PNG.*/
+
+	background-size: 100% 100%; /*Este metodo muestra la foto bien, sino se ve mal porque no se ajusta al tamaño del div logo en index. Ademas a la foto la editamos desde CANVA en mi caso, para quitarle el fondo y descargarlo PNG. Esto hace que una foto con estas caracteristicas se adapte al color de fondo que tenga la pagina, su background. */
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+h1
+{ /*Extraemos una fuente de Google Fonts para el titulo, ademas ponemos al comienzo de todo el archivo css el codigo de css que nos muestra para extraer (sale html/css o javascript pero elegimos el de css que seria: @import url(http: //fonts.googleapis.com/css?family=Merienda); como vemos arriba )*/
+  font-family: 'Merienda', cursive;
+
+  color: white;
+  text-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+}
+h2
+{
+	font-family: arial;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 14px;
+	position: relative;
+	top: -00px;
+	left: 20px
+}
+
+header
+{
+	width: 33%;
+	height: 100%;
+	float: left;
+}
+
+section
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 100px;
+}
+
+.imagendestacado
+{
+	width: 200px;
+	height: 100px;
+	background: grey;
+	float: left;
+	margin-right: 10px;
+	margin-top: 30px;
+}
+
+#img1
+{	
+	background: url('../img/villacarlospaz.jpg');
+	background-size: 100% 100%;
+}
+
+#img2
+{
+	background: url('../img/villageneralbelgrano.jpg');
+	background-size: 100% 100%;
+}
+
+#img3
+{
+	background: url('../img/minaclavero.jpg');
+	background-size: 100% 100%;
+}
+
+#contenedor
+{
+	width: 100%;
+	height: 100%;
+}
+
+#titulo
+{
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+h1,h2,h3,h4,h5,h6,p
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+nav 
+{
+	margin-top: 100px;
+	border: 0px solid black;
+	width: 90%;
+	height: 61%;
+	box-shadow: -25px 0px 50px rgba(0, 0, 0, 0.2) inset;
+}
+
+nav ul
+{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+nav ul li
+{
+	width: 95.6%;
+
+	border-bottom: 1px solid grey;
+	height: 50px;
+	padding-top:20px ;
+	padding-left: 10px;
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+nav ul li a
+{
+	color: black;
+	text-decoration: none;
+}
+
+/* Queda por terminar de estilizar el color de fondo de tableta*/

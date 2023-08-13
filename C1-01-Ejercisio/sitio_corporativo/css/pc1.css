@@ -1,0 +1,316 @@
+/* <!-- Inicialmente, para probar el funcionamiento de Jquery en base al cambio de color cambiando de plantilla usamos esto, pero ya no {background:green; }, porque anda bien.
+
+Ahora maquetaremos el estilo de PC1*/
+
+@import url(http: //fonts.googleapis.com/css?family=Merienda);
+body
+{
+	background:url('../img/degradado.png'), rgba(0,0,0,0.1); /*Le damos color gris clarito, pero en el practico le agregamos un fondo creado en Canva gris degradado y tipo png sin fondo. Pero no debe agregarse abajo sino dentro del mismo background, sino no mostrara correctamente la fusion. Y el orden es, el 1er backgroudn que sentenciamos es el que va primero y el 2do va por encima.*/
+
+	background-repeat: repeat-x;
+}
+
+/* <!-- Recordamos que tenemos una etiqueta (en comun con index/blog/contacto y producto) llamada contenedor en el que le daremos estilo. Aclaracion importante:  Si al guardar vemos que sigue
+ mostrante el efecto del fondo verde del background que habiamos hacho de prueba, hay que borrar la cache del navegador para que quite el efecto y muestre el actual. Ademas, para ver la 
+ pantalla completa desde el explorador, la ponemos en %50 para ver todos los cambios de estilo. */
+
+#contenedor 
+{
+	border: 0px dotted grey;/*A 0 el borde para ocultarlo, antes en 1*/
+	width: 800px;
+	height: 620px; /*Le pongo este height porque la caja cortaba a los parrafos.*/
+	margin: auto;
+	padding: 20px;
+}
+
+h1,h2,h3,h4,h5,h6,p
+{
+	margin: 0px; padding: 0px;
+	
+}
+
+h1,h2
+{
+	margin: 0px; padding: 0px;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+h1
+{ /*Extraemos una fuente de Google Fonts para el titulo, ademas ponemos al comienzo de todo el archivo css el codigo de css que nos muestra para extraer (sale html/css o javascript pero elegimos el de css que seria: @import url(http: //fonts.googleapis.com/css?family=Merienda); como vemos arriba )*/
+  font-family: 'Merienda', cursive;
+
+  color: white;
+  text-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+}
+h2
+{
+	font-family: arial;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 14px;
+	position: relative;
+	top: -20px;
+	left: 20px
+}
+
+ul 
+{
+	list-style-type:none;/*Le quitamos los puntitos o "Bulets" a la lista ordenada*/
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+nav ul li
+{
+	float: left;
+	padding: 4px;
+	margin: 4px;
+	border-right: 1px dashed white; /*Borde a la derecha o separador que separara los enlaces*/
+	text-align: center;
+	width: 100px; /*Le meto un width porque no quedaba centrado, y asi a los elementos que no queden centrados.*/
+
+	transition: all 1s; /*Decimos que todo transicione en 1s, es decir que si pasar el raton se vea blanco de apoco*/
+}
+
+nav ul li:hover
+{
+	background:rgba(255,255,255,0.2); /*Hacemos que el fondo de los botones sea blanco al pasar el mouse.*/
+}
+
+
+
+
+nav ul li a
+{
+	text-decoration: none; /*Quitamos el subrayado tipico del hipervinculo*/
+	color: white; /*Pero lo pintamos de azul para que la gente sepa que lo es*/
+	text-align: center;
+}
+
+#banner
+{
+	width: 100%;
+	height: 300px;
+	border:0px solid black; /*Estaba en 1px solo para verlo, pero lo sacamos dandole valor 0*/
+	background: url('../img/cordobacentro.jpg');
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0px 10px 25px rgba(0,0,0,0.4); /*OJO: Parentesis pegado al rgba, sino da error. Otra cosa, hay que darle un padding para separar el texto del banner con la imagen del banner, sin embargo lo que pasa es que se descuadra la maquetacion y encima la imagen se empieza a repetir, entonces vamos index y en banner creamos otro clear: both en un div, y desde aca pc1.css le daremos a ese div (contienebanner) el padding dentro "A esto ya lo hicimos antes." */
+
+	background-size: 100% 100%; /*Le meto esto porque sino repite imagen igual aunque tenga el contiene banner :S */
+}
+
+#contienebanner
+{
+	padding: 10px;
+	background: rgba(255,255,255,0.6);
+}
+
+ article
+{
+	width:33%;
+	text-align: justify;
+	float: left;
+	/*Si ponemos este metodo (padding:10px ;) que sirve para darle espacio entre los articulos, este por defecto pone 2 articulos bien pero manda uno debajo por defecto, dado que toma la anchura de los 3 articulos sumados.
+	Pero lo que hay que hacer es crear un div que tenga la propiedad padding pero que aplique por separado a cada articulo.
+	Este es un error muy comun en maquetacion pero se soluciona de forma sencilla, entonces crearemos un <div id="contienearticulo"> y le daremos a ese id el padding y listo.*/
+}
+
+.contienearticulo
+{
+	padding: 10px;
+	height: 200px;
+	overflow: hidden; /*Con eso le decimos que corte todo elemento que salga de la caja.*/
+}
+
+#primerarticulo
+{
+	padding-left: 0px;
+}
+
+#tercerarticulo
+{
+	padding-right: 0px;
+}
+footer
+{
+	margin-top: 30px;
+	height: 30px;
+	text-align: center;
+}
+
+#logo
+{
+	height: 100px;
+	width: 100px;
+	background: url('../img/mauriciobanega2.png'); /*OJO:  Si lo pones como en el video, no va mostrar porque no le pone comillas simples dentro. Y el archivo es tipo JPG, y no PNG.*/
+
+	background-size: 100% 100%; /*Este metodo muestra la foto bien, sino se ve mal porque no se ajusta al tamaño del div logo en index. Ademas a la foto la editamos desde CANVA en mi caso, para quitarle el fondo y descargarlo PNG. Esto hace que una foto con estas caracteristicas se adapte al color de fondo que tenga la pagina, su background. */
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+ 
+
+.imagendestacado
+{
+	width: 100%;
+	height: 100px;
+	background: grey;
+	margin-bottom: 10px;
+	background-size: 100% 100%;
+}
+
+#img1
+{	
+	background: url('../img/villacarlospaz.jpg');
+	background-size: 100% 100%;
+}
+
+#img2
+{
+	background: url('../img/villageneralbelgrano.jpg');
+	background-size: 100% 100%;
+}
+
+#img3
+{
+	background: url('../img/minaclavero.jpg');
+	background-size: 100% 100%;
+}
+
+#banner #contienebanner p
+{
+	font-size: 10px; 
+} 
+
+#contieneformulario
+{
+	width: 100%;
+	background: white;
+	padding: 20px;
+	box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+	margin-top: 10px;
+}
+
+#contieneformulario form
+{
+	width: 50%;
+	margin: auto;
+	border: 1px dashed rgba(0,0,0,0.2);
+	padding: 10px;
+}
+
+#contieneformulario form input, #contieneformulario form textarea, #contieneformulario form #botonenviar
+{
+	width: 95%;
+	margin-bottom: 10px;
+}
+
+#articulos
+{
+	width: 66%;
+	float: left;
+}
+
+#articulos article
+{
+	width: 100%;
+	float: none;
+	margin-bottom:20px ;
+}
+
+aside
+{
+	padding: 10px;
+	border: 0px solid black;
+	width: 30%;
+	float: right;
+	height: 100%;
+	background: rgba(0,0,0,0.1) ;
+}
+
+#contieneblog
+{
+	background: white;
+	box-shadow: 0px 10px 15px rgba(0,0,0,0.3);
+	padding: 10px;
+
+}
+
+#imgblog1
+{	
+	background: url('../img/villacarlospaz.jpg');
+	background-size: 100% 100%;
+	width: 100%;
+	height: 200px;
+}
+
+#imgblog2
+{	
+	background: url('../img/villageneralbelgrano.jpg');
+	background-size: 100% 100%;
+	width: 100%;
+	height: 200px;
+}
+
+#imgblog3
+{	
+	background: url('../img/minaclavero.jpg');
+	background-size: 100% 100%;
+	width: 100%;
+	height: 200px;
+}
+
+#imgblog4
+{	
+	background: url('../img/villageneralbelgrano.jpg');
+	background-size: 100% 100%;
+	width: 100%;
+	height: 200px;
+}
+
+#imgblog5
+{	
+	background: url('../img/minaclavero.jpg');
+	background-size: 100% 100%;
+	width: 100%;
+	height: 200px;
+}
+
+#contieneportafolio
+{
+	background: white;
+	width: 100%;
+	padding: 20px;
+	box-shadow: 0px 20px 20px rgba(0,0,0,0.4);
+
+}
+
+
+.artportafolio
+{
+ width: 50%;
+ 
+}
+
+
+.imagenportafolio
+{
+	background: grey;
+	width: 380px;
+	height: 200px;
+}
+
+.contieneportafoliointerior
+{
+	padding: 10px;
+}
+
+#portafolio1, #portafolio2, #portafolio3, #portafolio4, #portafolio5, #portafolio6, #portafolio7, #portafolio8, #portafolio9, #portafolio10, #portafolio11, #portafolio12
+{
+	background: url('../img/minaclavero.jpg');
+	background-size: 100% 100%;
+}

@@ -1,0 +1,299 @@
+<!-- HTML y CSS3 - Crearemos una pagina llamada "sitio_corporativo". Donde haremos 
+
+*IMPORTANTE! VISUALIZACION: Para que no corra el codigo siempre a la derecha sin poder verlo despues, en Sublime Text vas a View/Word Wrap (y tildamos la opcion).
+
+(!)Atajos: Si tipeo "!"+ "tecla "TAB" se autocompleta en el formato Docitype con toda la estructura inicial, podemos borrar luego las que no usemos.
+
+
+
+(2) Dentro del header como en otras etiquetas pondremos divs con id para contener y maquetar, por el momento, no usaremos clases ya que todo lo escrito hasta ahora es unico. Pero si hago elementos que apareceran multiples veces usare "class".
+
+(3) Debajo del body crearemos una etiqueta select - Esta nos poermite crear una lista desplegable.
+
+(4) Meta: Creamos dentro del head una etiqueta llamada meta, en ella adaptaremos la codificacion a UTF8 y que los acentos y caracteres aparezcan correctamente en pantalla.
+
+(5) Descargamos JQUERY desde jquery.com, la version de produccion. Lo guardamos dentro de la carpeta "js" con el nombre "jquery". Hacemos dos script, la 1º linea sirve para cargar la libreria y usarla de ahi en adelante y la 2º para sirve para desarrollar mi propio script. 
+
+ACLARACION SUPER IMPORTANTE: El Javascript que usa el chavon es uno viejo (2012). Desde el 2016 este se actualizo (el que tengo descargado en este proyecto). Por ello es que al momento de programar codigos .JS con funciones de inicio/cambiacss no van a andar. Es por eso que tuve que renegar, buscar como se escribe ese codigo al año 2022 desde la pagina https://codepen.io/ desde donde podes ver los errores en HTML/CSS/JS del proyecto que estes haciendo.
+
+Dentro de la 2º creamos una estructura de comprobacion/control tipica o clasica. 
+
+$(document).ready(inicio)
+		function inicio()
+		{ alert ("Esta funcionando");}
+
+Esta mostrara un mensaje emergente cada vez que carguemos la pagina que nos indicara si esta funcionando mediante el mje "Esta funcionando".
+
+
+EN ESTOS CAMBIOS DE CODIGO RENEGABA...
+
+-EDICION AVER SI ANDA O NO (inventada)
+
+function inicio()
+		{	
+			$('#select').change(cambiacss)
+			 
+		}
+
+		function cambiacss()
+		{
+			var plantilla=$('#select:selected').val(); 
+			//console.log ( $("#test")) ;
+			$("#plantilla").html('<link rel=Stylesheet href="css/'+plantilla+'.css" type="text/css">')
+
+		}
+
+
+-EDICION AVER SI ANDA O NO (del video)
+
+function inicio()
+		{	
+			$("#select").change(cambiacss)
+			 
+		}
+
+		function cambiacss()
+		{
+			var plantilla=$("#select").val(); 
+			//console.log ( $("#test")) ;
+			$("#plantilla").html('<link rel=Stylesheet href="css/'+plantilla+'.css" type="text/css">')
+		}
+		
+
+(6) Editamos el archivo creado dentro de la carpeta js que se llama "base.css"; dentro abrimos y codificamos body {font-family: arial;} como podemos observar al abrilo. En el decimos que todo el body tenga la fuente Arial, pero para podamos ver el cambio hay que hacer el enlace desde CCS a HTML. A eso lo hacemos mediante la etiqueta "link" y su codigo respectivo dentro.
+
+(7) Ahora crearemos las funciones "tipicas" de JS. Lo que haran seran que al cambiar los valores del "select", por ej Tableta Digital, este traiga el color amarillo. Dado que creamos dentro de tablet.css un body donde le dimos ese color backgroud (como tambien lo hicimos con cada platilla dentro de ese select).
+
+(8) Ahora para los archivos html blog/contacto/productos copiamos todo lo codificado en index y lo pegamos en ellos. Borrando todo lo que no nos interese y que tengamos luego que agragar nuevo, por ejemplo sacarmos todo el contenido de la seccion o section, dejando solo <section>/</section>, creando asi una plantilla que sera la misma inicialmente para contactos y productos.
+
+-->
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+
+	<!-- (4) --->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- (5):Primera linea: llama a la libreria/Segunda linea: Nos permite crear nuestro propio diseño javascript. --->
+	<script type="text/javascript" src="js/jquery.js"></script> 
+	<script type="text/javascript"> 
+
+		$(document).ready(inicio) //Significa: Cuando el documento este preparado que llame a la funcion de inicio.
+		
+		//<!-- (7) --->
+		function inicio()
+		{	
+			$('select').change(cambiacss);
+
+			/*Creamos esta serie de metodos Javascript, para cambiar el tamaño de la pantalla automaticamente cambiemos de tamaño la ventana del navegador (detectar y cambiar plantillas con diseño fluido basandonos en la anchura). Pero con este 1er y 2do metodo tenemos que actualizar la ventana para ver el efecto trans modificar el tamaño. Mas adelante veremos el de CSS3 que fluye mejor, sin necesidad de actualizar el navegador para ver los cambios.
+
+
+			Este es el 1er Ejemplo de como se puede hacer:
+
+
+
+			if(window.innerWidth < 400)
+				{$('plantilla').html('<link rel=Stylesheet href="css/movil.css" type="text/css">');}
+
+			if(window.innerWidth >= 400 && window.innerWidth < 600)
+				{$('plantilla').html('<link rel=Stylesheet href="css/tablet.css" type="text/css">');}
+
+			if(window.innerWidth >= 600 && window.innerWidth < 1200)
+				{$('plantilla').html('<link rel=Stylesheet href="css/pc1.css" type="text/css">');}
+
+			if(window.innerWidth >= 1200 && window.innerWidth < 2400)
+				{$('plantilla').html('<link rel=Stylesheet href="css/pchd.css" type="text/css">');}
+
+
+
+
+			Este es el 2do Ejemplo de como se puede hacer:
+			-Aca es identico salvo que le agrega el metodo navigator que sirve ademas de analizar segun achura, que tipo de dispositivo es. El metodo navigator es un metodo del lenguaje "Javascript".
+
+
+
+			
+			if(window.innerWidth < 400 && (navigator.userAgent.match(/Iphone/i)) || (navigator.userAgent.match(/Android/i)))
+
+				{$('plantilla').html('<link rel=Stylesheet href="css/movil.css" type="text/css">');}
+
+			//Si achico la pantalla esta no cambiara a plantilla movil porque si bien es cierto que la ventana esta reducida a -400px no es cierto que se este viendo desde un Iphone o Android, sino desde la PC.
+
+			if(window.innerWidth >= 400 && window.innerWidth < 600 && (navigator.userAgent.match(/Ipad/i)) || (navigator.userAgent.match(/Android/i)))
+
+				{$('plantilla').html('<link rel=Stylesheet href="css/tablet.css" type="text/css">');}
+
+
+			if(window.innerWidth >= 600 && window.innerWidth < 1200)
+				{$('plantilla').html('<link rel=Stylesheet href="css/pc1.css" type="text/css">');}
+
+			if(window.innerWidth >= 1200 && window.innerWidth < 2400)
+				{$('plantilla').html('<link rel=Stylesheet href="css/pchd.css" type="text/css">');}
+
+
+
+
+				Ahora aplicamos abajo (sin comentarlo) el metodo definitivo que aplicaremos que es la etiqueta media de CSS3 y que sera la que elegiremos por ser mas practico como se indico por arriba. Lo unico malo es la compatibilidad, ya que Javascript tiene mas con distintos tipos de navegadores.
+
+				Tenemos que cambiar de la etiqueta plantilla que era:
+
+				<link rel=Stylesheet href="css/pc1.css" type="text/css">
+
+				Lo que quedara ya definido/agregado final que podremos ver a continuacion en la etiqueta "media".
+
+			*/
+
+		}
+
+		function cambiacss()
+		{
+			var plantilla=$('select').val(); 
+			
+			$('plantilla').html('<link rel=Stylesheet href="css/'+plantilla+'.css" type="text/css">');
+			//Creamos la variable inventada plantilla y volcaremos el estilo css. en una variable que aun no existe la crearemos vacia mas abajo. 
+		}
+	  
+
+	</script>
+	
+	<!-- (6) Plantilla base.css--->
+	<link rel=Stylesheet href="css/base.css" type="text/css">
+	
+
+
+	<plantilla>
+
+		<!-- Creamos una plantilla aparte para pc1 (Video 2 Clase 2)-->
+	<link rel=Stylesheet href="css/movil.css" type="text/css" media="handheld and (max-width:400px) and (min-width:1px)">
+
+	<link rel=Stylesheet href="css/tablet.css" type="text/css" media="screen and (max-width:680px) and (min-width:401px)">
+
+	<link rel=Stylesheet href="css/pc1.css" type="text/css" media="screen and (max-width:1200px) and (min-width:601px)">
+
+	<link rel=Stylesheet href="css/pchd.css" type="text/css" media="screen and (max-width:3600px) and (min-width:1201px)">
+
+	</plantilla> 
+							<!-- En fin con todo esto se cambia de color el fondo, cambiando las plantillas desde Select, que despues seguro que no cambiara de color sino que cambiara completamente la pagina.--->
+
+</head>
+
+<body>
+	<select name="plantilla"> 
+		<option value="base">Selecciona una plantilla</option>
+		<option value="pc1">Plantilla para PC</option>
+		<option value="pchd">Plantilla alta definicion</option>
+		<option value="movil">Plantilla para teléfono móvil</option>
+		<option value="tablet">Plantilla para tablet digital</option>
+	</select>
+
+	<hr>
+
+	<div id="contenedor">
+
+		<header> <!-- (2) --->
+
+			<div id="titulo">
+				
+				<div id="logo">
+				</div>
+				
+				<h1>Mauricio Ruben Banega</h1>
+				<h2>Eslogan de la web</h2>
+			</div>	
+
+			<div style="clear:both;"></div> <!-- De nuevo, como abajo ponemos este metodo para que el float:left de pc1.css (logo) no arrastre los href.-->
+
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">Inicio</a>
+					</li>
+
+					<li>
+						<a href="blog.html">Blog</a>
+					</li>
+
+					<li>
+						<a href="productos.html">Productos</a>
+					</li>
+
+					<li>
+						<a href="contacto.html">Contacto</a>
+					</li>
+
+				</ul>
+			</nav>
+
+			<div style="clear:both;"></div>
+					<!-- Este metodo lo aplicamos luego en index porque la linea 33 (nav ul li) de pc1.css, se lleva el titulo del banner, por eso justo debajo del nav. Lo que hace esta etiqueta es eliminar el problema de rotacion, le decimos que no arraste mas elementos mas alla del menu de navegacion nav--->
+
+			
+
+		</header>
+
+
+		<section>
+
+			<div id="banner" contenteditable="true">
+			<div id="contienebanner">
+				<h3>TÍtulo del banner</h3>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+			</div>
+			</div>
+
+
+			<article contenteditable="true"> <!--Con esta propiedad hacemos que el texto sea editable, veremos que podemos poner el cursor dentro. Aplicamos esto a todos los articulos y al banner.-->
+
+				<div class="contienearticulo" id="primerarticulo">
+				<div class="imagendestacado" id="img1">
+				</div>
+
+				<h3>TÍtulo del destacado</h3>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+				</div>
+			</article>
+
+			<article contenteditable="true">
+				<div class="contienearticulo">
+				<div class="imagendestacado" id="img2">
+				</div>
+
+				<h3>TÍtulo del destacado</h3>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+				</div>
+			</article>
+
+			<article contenteditable="true">
+				<div class="contienearticulo"  id="tercerarticulo">
+				<div class="imagendestacado" id="img3">
+				</div>
+
+				<h3>TÍtulo del destacado</h3>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+				</div>
+			</article>
+
+			
+		</section>
+
+
+		<footer>
+			<h6>(c) 2022 Mauricio Ruben Banega</h6>
+		</footer>
+
+
+	</div>
+
+</body>
+
+
+
+
+
+
+</html>

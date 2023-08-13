@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+
+	<!-- (4) --->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- (5):Primera linea: llama a la libreria/Segunda linea: Nos permite crear nuestro propio diseño javascript. --->
+	<script type="text/javascript" src="js/jquery.js"></script> 
+	<script type="text/javascript"> 
+
+		$(document).ready(inicio) //Significa: Cuando el documento este preparado que llame a la funcion de inicio.
+		
+		//<!-- (7) --->
+		function inicio()
+		{	
+			$('select').change(cambiacss);
+			 
+		}
+
+		function cambiacss()
+		{
+			var plantilla=$('select').val(); 
+			
+			$('plantilla').html('<link rel=Stylesheet href="css/'+plantilla+'.css" type="text/css">');
+			//Creamos la variable inventada plantilla y volcaremos el estilo css. en una variable que aun no existe la crearemos vacia mas abajo. 
+		}
+	  
+
+	</script>
+	
+	<!-- (6) --->
+	<link rel=Stylesheet href="css/base.css" type="text/css">
+
+
+	<plantilla>
+
+		<link rel=Stylesheet href="css/pc1.css" type="text/css">
+
+	</plantilla> 
+							<!-- En fin con todo esto se cambia de color el fondo, cambiando las plantillas desde Select, que despues seguro que no cambiara de color sino que cambiara completamente la pagina.--->
+
+</head>
+
+<body>
+	<select name="plantilla"> 
+		<option value="base">Selecciona una plantilla</option>
+		<option value="pc1">Plantilla para PC</option>
+		<option value="pchd">Plantilla alta definicion</option>
+		<option value="movil">Plantilla para teléfono móvil</option>
+		<option value="tablet">Plantilla para tablet digital</option>
+	</select>
+
+	<hr>
+
+	<div id="contenedor">
+
+		<header> <!-- (2) --->
+
+			<div id="titulo">
+				
+				<div id="logo">
+				</div>
+				
+				<h1>Mauricio Ruben Banega</h1>
+				<h2>Eslogan de la web</h2>
+			</div>	
+
+			<div style="clear:both;"></div>
+
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">Inicio</a>
+					</li>
+
+					<li>
+						<a href="blog.html">Blog</a>
+					</li>
+
+					<li>
+						<a href="productos.html">Productos</a>
+					</li>
+
+					<li>
+						<a href="contacto.html">Contacto</a>
+					</li>
+
+				</ul>
+			</nav>
+
+			<div style="clear:both;"></div>
+
+		</header>
+
+
+		<section> <!-- Lo que crearemos dentro del section de productos son 12 articulos en donde mostraremos los productos que ofrecemos. --->
+
+		<div id="contieneportafolio">
+
+		<article class="artportafolio" id="porta1">
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio1"></div>
+		</div>	
+	    </article>
+
+		<article class="artportafolio" id="porta2">
+		<div class="contieneportafoliointerior">  
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio2"></div>
+		</div>
+		</article>
+
+		<article class="artportafolio" id="porta3">
+		<div class="contieneportafoliointerior">  
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio3"></div>
+		</div>
+		</article>
+
+		<article class="artportafolio" id="porta4"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio4"></div>
+		</div>
+	    </article>
+
+		<article class="artportafolio" id="porta5"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio5"></div>
+		</div>
+		</article>
+
+		<article class="artportafolio" id="porta6"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio6"></div>
+		</div>
+		</article>
+		
+		<article class="artportafolio" id="porta7"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio7"></div>
+		</div>
+	    </article>
+
+		<article class="artportafolio" id="porta8"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio8"></div>
+		</div>
+		</article>
+
+		<article class="artportafolio" id="porta9"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio9"></div>
+		</div>
+		</article>
+
+		<article class="artportafolio" id="porta10"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio10"></div>
+		</div>
+	    </article>
+
+		<article class="artportafolio" id="porta11"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio11"></div>
+		</div>
+		</article>
+
+		<article class="artportafolio" id="porta12"> 
+		<div class="contieneportafoliointerior"> 
+			<h3>Título del proyecto</h3>
+			<p>Breve descripción</p>
+			<div class="imagenportafolio" id="portafolio12"></div>
+		</div>
+		</article>
+			
+			
+			<div style="clear:both;"></div>
+
+		</div>
+
+
+
+		</section>
+
+
+
+		<footer>
+			<h6>(c) 2022 Mauricio Ruben Banega</h6>
+		</footer>
+
+
+	</div>
+
+</body>
+
+
+
+
+
+
+</html>

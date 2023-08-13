@@ -1,0 +1,132 @@
+/*El objetivo de esta plantilla es que sea lo mas ajustada a la pantalla pequeña posible ya que es de movil.*/
+
+@import url(http: //fonts.googleapis.com/css?family=Merienda);
+body, html
+{
+	padding: 0px;
+	margin: 0px;
+
+	/*El padding y el margen en 0 para aprovechar el espacio.*/
+}
+
+h1,h2,h3,h4,h5,h6,p
+{
+	padding: 0px;
+	margin: 0px;
+
+	/*El padding y el margen en 0 para aprovechar el espacio.*/
+}
+
+h1
+{
+	font-family: 'Merienda', cursive;
+	text-align: center;
+}
+
+h2
+{
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: italic;
+}
+
+ul
+{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+li
+{
+	width: 95%;
+	height: 30px;
+	border: 0px solid black;
+	
+	text-transform: uppercase; /*Este metodo hace la letra en mayuscula y espaciada*/
+	margin: 4px;
+	padding: 4px;
+	border-radius: 5px;
+
+	/*Ahora colocaremos un gradiente de CSS3 desde la web (colorzilla.com/gradient-editor)*/
+
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f6f6+0,dbdce2+21,bcbdc4+49,dddfe3+80,f5f6f6+100 */
+background: #f5f6f6; /* Old browsers */
+background: -moz-linear-gradient(top, #f5f6f6 0%, #dbdce2 21%, #bcbdc4 49%, #dddfe3 80%, #f5f6f6 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f5f6f6 0%,#dbdce2 21%,#bcbdc4 49%,#dddfe3 80%,#f5f6f6 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f5f6f6 0%,#dbdce2 21%,#bcbdc4 49%,#dddfe3 80%,#f5f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
+
+	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4); /* Le damos sombra */
+
+}
+
+ul li a 
+{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+#banner, article /* Ocultamos el p del banner porque le damos un height bajo, pero mediante focus (click) le diremos que el height sea mas grande para que lo muestre.*/
+{
+	width: 100%;
+	height: 25px;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	trnasition: all 1s; /* Le decimos que abra al clickear y dure un segundo en hacerlo (da cierta lentitud al darle apertura y cierre)*/
+
+	border-bottom: 1px dashed grey; /* Le ponemos una serie de lineas cortadas, para demotrar que hay contenido al tocarlo.*/
+}
+
+#banner:focus,article:focus
+{
+	height: 300px;
+}
+
+#banner #contienebanner h3, article .contienearticulo h3
+{
+	background: url('../img/mano.png') ;
+
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	font-size: 24px;
+
+}
+
+#contieneformulario
+{
+	margin-top: 20px;
+}
+
+
+#contieneformulario form input, #contieneformulario form textarea, #contieneformulario form #botonenviar
+{
+	width: 90%;
+	margin-bottom: 10px;
+	font-size: 20px;
+	padding: 10px;
+	margin: auto;
+	margin-left: 5px;
+	
+}
+
+#contieneformulario form #nombre, #contieneformulario form textarea, #contieneformulario form #email
+{
+	border-radius: 5px;
+	box-shadow: 0px 0px 25px rgba(0,0,0,0.3) inset;
+}
+
+input, textarea
+{
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.formleyenda
+{
+	margin-top: 20px;
+}

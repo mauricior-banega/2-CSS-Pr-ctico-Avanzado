@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+
+	<!-- (4) --->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+
+
+
+	<!-- (5):Primera linea: llama a la libreria/Segunda linea: Nos permite crear nuestro propio diseño javascript. --->
+	<script type="text/javascript" src="js/jquery.js"></script> 
+	<script type="text/javascript"> 
+
+		$(document).ready(inicio) //Significa: Cuando el documento este preparado que llame a la funcion de inicio.
+		
+		//<!-- (7) --->
+		function inicio()
+		{	
+			$('select').change(cambiacss);
+			 
+		}
+
+		function cambiacss()
+		{
+			var plantilla=$('select').val(); 
+			
+			$('plantilla').html('<link rel=Stylesheet href="css/'+plantilla+'.css" type="text/css">');
+			//Creamos la variable inventada plantilla y volcaremos el estilo css. en una variable que aun no existe la crearemos vacia mas abajo. 
+		}
+	  
+
+	</script>
+	
+	<!-- (6) --->
+	<link rel=Stylesheet href="css/base.css" type="text/css">
+
+
+	<plantilla>
+		<link rel=Stylesheet href="css/movil.css" type="text/css">
+	</plantilla> 
+							<!-- En fin con todo esto se cambia de color el fondo, cambiando las plantillas desde Select, que despues seguro que no cambiara de color sino que cambiara completamente la pagina.--->
+
+</head>
+
+<body>
+	<select name="plantilla"> 
+		<option value="base">Selecciona una plantilla</option>
+		<option value="pc1">Plantilla para PC</option>
+		<option value="pchd">Plantilla alta definicion</option>
+		<option value="movil">Plantilla para teléfono móvil</option>
+		<option value="tablet">Plantilla para tablet digital</option>
+	</select>
+
+	<hr>
+
+	<div id="contenedor">
+
+		<header> <!-- (2) --->
+
+			<div id="titulo">
+				
+				<div id="logo">
+				</div>
+				
+				<h1>Mauricio Ruben Banega</h1>
+				<h2>Eslogan de la web</h2>
+			</div>	
+
+			<div style="clear:both;"></div><!-- Primer clear -->
+
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">Inicio</a>
+					</li>
+
+					<li>
+						<a href="blog.html">Blog</a>
+					</li>
+
+					<li>
+						<a href="productos.html">Productos</a>
+					</li>
+
+					<li>
+						<a href="contacto.html">Contacto</a>
+					</li>
+
+				</ul>
+			</nav>
+
+			<div style="clear:both;"></div> <!-- Segundo clear -->
+
+		</header>
+
+
+		<section> <!-- blog.html es identico a index.html (mismo plantilla), pero apartir del section como dijimos se borra y cargamos contenido nuevo creando articulos y contenido. --->
+
+			<div id="contieneblog">
+
+			<div id="articulos">
+
+				<article contenteditable="true">
+
+					<h3>Titulo del articulo</h3>
+
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+
+					<div class="imagenarticuloblog" id="imgblog1"> <!-- Como esta imagen se va a repetir ponemos un class en vez de id--->
+					</div>
+
+				</article>
+
+
+
+
+				<article contenteditable="true">
+
+					<h3>Titulo del articulo</h3>
+
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+
+					<div class="imagenarticuloblog" id="imgblog2"> <!-- Como esta imagen se va a repetir ponemos un class en vez de id--->
+					</div>
+
+				</article>
+
+
+
+				<article contenteditable="true">
+
+					<h3>Titulo del articulo</h3>
+
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+
+					<div class="imagenarticuloblog" id="imgblog3"> <!-- Como esta imagen se va a repetir ponemos un class en vez de id--->
+					</div>
+
+				</article>
+
+
+
+				<article contenteditable="true">
+
+					<h3>Titulo del articulo</h3>
+
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+
+					<div class="imagenarticuloblog"  id="imgblog4"> <!-- Como esta imagen se va a repetir ponemos un class en vez de id--->
+					</div>
+
+				</article>
+
+
+				<article contenteditable="true">
+
+					<h3>Titulo del articulo</h3>
+
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+
+					<div class="imagenarticuloblog"  id="imgblog5"> <!-- Como esta imagen se va a repetir ponemos un class en vez de id--->
+					</div>
+
+				</article>
+
+
+			</div>
+
+			<aside>
+				<div id="archivo">
+					<h3>Archivo</h3>
+
+					<ul>
+						<li><a href="">Diciembre 2022</a></li>
+						<li><a href="">Noviembre 2022</a></li>
+						<li><a href="">Octubre 2022</a></li>
+						<li><a href="">Septiembre 2022</a></li>
+						<li><a href="">Agosto 2022</a></li>
+					</ul>
+				</div>
+
+				<div id="sobre">
+
+					<h3>Sobre este Blog</h3>
+
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum."</p>
+				</div>
+
+			</aside>
+		
+		<div style="clear:both;"></div> 
+
+		</div>
+			
+		</section>
+
+		<div style="clear:both;"></div> <!-- Tercer clear -->
+
+		<footer>
+			<h6>(c) 2022 Mauricio Ruben Banega</h6>
+		</footer>
+
+
+	</div>
+
+</body>
+
+
+
+
+
+
+</html>
